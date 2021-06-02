@@ -1,3 +1,15 @@
-<p>
-  board works!
-</p>
+<div class="main">
+  <div class="board" *ngIf="cards">
+    <div *ngFor="let item of cards">
+      <app-card [model]="item" (cardClick)="onCardClick($event)"></app-card>
+    </div>
+  </div>
+  <div class="timer-container">
+    <div class="timer">
+      <p>{{timePassed}}</p>
+    </div>
+    <div class="reset">
+      <button (click)="onClick($event)"> Reset </button>
+    </div>
+  </div>
+</div>

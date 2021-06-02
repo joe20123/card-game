@@ -1,1 +1,3 @@
-<img [src]="model.Source" alt="" width="200" height="200" (click)="onClick($event)">
+<div class="card">
+  <img [src]="model.FaceUp ? model.Source: model.BackSource" alt="" width="100" height="150" (click)="onClick($event)">
+</div>
