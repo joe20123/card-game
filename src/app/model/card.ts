@@ -1,7 +1,7 @@
 export class Card {
     Source: string;
-    // OpenedBefore: boolean;
-    FaceUp: boolean;
+    OpenedBefore: boolean;
+    FaceUp = false;
     BackSource: string;
     CardIndex = 0; // 0 and 1
     found = false;

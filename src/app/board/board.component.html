@@ -6,10 +6,11 @@
   </div>
   <div class="timer-container">
     <div class="timer">
-      <p>{{timePassed}}</p>
+      <p>Time: {{timePassed * 1000 | date: 'mm:ss'}}</p>
     </div>
     <div class="reset">
       <button (click)="onClick($event)"> Reset </button>
     </div>
   </div>
+  
 </div>

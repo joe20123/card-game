@@ -3,6 +3,7 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <app-board></app-board>
+  <app-board *ngIf='!finished' (foundAllPairs)="onFoundAllPairs($event)"></app-board>
+  <app-congratulation *ngIf='finished' (reset)="onReset()"></app-congratulation>
 </div>
 

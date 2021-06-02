@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'card-game';
+  finished = false;
+
+  onReset() {
+    this.finished = false;
+  }
+
+  onFoundAllPairs(e) {
+    this.finished = true;
+  }
 }

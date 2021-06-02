@@ -19,7 +19,7 @@ export class Board {
             this.availablePngFileNames.push('assets/png/' + k + '_of_spades' + '.png');          
         }
         for (let k = 1; k <= 4; k++) {
-            for (const item of ['jack', 'king', 'queen']) {
+            for (const item of ['jack', 'king', 'queen', 'ace']) {
                 this.availablePngFileNames.push('assets/png/' + item + '_of_clubs' + '.png');          
                 this.availablePngFileNames.push('assets/png/' + item + '_of_diamonds' + '.png');          
                 this.availablePngFileNames.push('assets/png/' + item + '_of_hearts' + '.png');          
@@ -30,13 +30,17 @@ export class Board {
     private createCards(boardHeight: number) {
         this.getAvailablePngFileNames();
         const num = boardHeight * boardHeight / 2;
-        const uniqueCardPaths = _.sampleSize(this.availablePngFileNames as [], num);
+        const s1 = new Set<string>(_.shuffle(this.availablePngFileNames));
+        const uniqueCardPaths = Array.from(s1).slice(0, num);
+        // const uniqueCardPaths = _.sampleSize(this.availablePngFileNames as [], num);
         const _cards = new Array<Card>();
         for (const item of uniqueCardPaths) {
             // add twice for each card
             _cards.push(new Card(item, this.Back_Path, 0));
             _cards.push(new Card(item, this.Back_Path, 1));
         }
+        this.Cards = _cards;
         this.Cards = _.shuffle(_cards);
     }
+
 }

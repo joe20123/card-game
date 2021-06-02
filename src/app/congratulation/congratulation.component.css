@@ -1,0 +1,11 @@
+.container-congratulation {
+    text-align: center;
+}
+.text {
+    font-size: 2em;
+}
+.reset {
+    width: 120px;
+    height: 80px;
+    margin: 0 auto;
+}
